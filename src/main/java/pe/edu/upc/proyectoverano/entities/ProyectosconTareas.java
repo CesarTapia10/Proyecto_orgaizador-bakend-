@@ -25,8 +25,6 @@ public class ProyectosconTareas {
     @Column(name = "fecha_modifiacion",nullable = false)
     private LocalDate fecha_modifiacion;
 
-    @Column(name = "catsimporte",nullable = false)
-    private int catsimporte;
 
     @ManyToOne
     @JoinColumn(name = "proyectos_id" , nullable = false)
@@ -44,7 +42,6 @@ public class ProyectosconTareas {
         this.id = id;
         this.fecha_creacion = fecha_creacion;
         this.fecha_modifiacion = fecha_modifiacion;
-        this.catsimporte = catsimporte;
         this.proyectos = proyectos;
         this.tareas = tareas;
     }
@@ -73,13 +70,6 @@ public class ProyectosconTareas {
         this.fecha_modifiacion = fecha_modifiacion;
     }
 
-    public int getCatsimporte() {
-        return catsimporte;
-    }
-
-    public void setCatsimporte(int catsimporte) {
-        this.catsimporte = catsimporte;
-    }
 
     public Proyectos getProyectos() {
         return proyectos;

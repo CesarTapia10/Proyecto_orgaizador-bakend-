@@ -15,8 +15,6 @@ public class ProyectosTareasDTO {
 
     private LocalDate fecha_modifiacion;
 
-    private int catsimporte;
-
     private Proyectos proyectos;
 
     private Tareas tareas;
@@ -51,14 +49,6 @@ public class ProyectosTareasDTO {
 
     public void setProyectos(Proyectos proyectos) {
         this.proyectos = proyectos;
-    }
-
-    public int getCatsimporte() {
-        return catsimporte;
-    }
-
-    public void setCatsimporte(int catsimporte) {
-        this.catsimporte = catsimporte;
     }
 
     public Tareas getTareas() {
