@@ -32,6 +32,14 @@ public class RoleController {
             return m.map(x, RoleDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @PostMapping("/NoAuth")
+    public void registrarNoAuth(@RequestBody RoleDTO dto) {
+        ModelMapper m = new ModelMapper();
+        roles d = m.map(dto, roles.class);
+        rR.insert(d);
+    }
+
     @PostMapping
     public void registrar(@RequestBody RoleDTO dto) {
         ModelMapper m = new ModelMapper();
@@ -50,6 +58,22 @@ public class RoleController {
         RoleDTO dto=m.map(rR.listarId(id),RoleDTO.class);
         return dto;
     }
+
+    @PutMapping
+    public void modificar(@RequestBody RoleDTO dto) {
+        ModelMapper m = new ModelMapper();
+        roles d = m.map(dto, roles.class);
+        rR.update(d);
+    }
+
+    @GetMapping("/buscarRol")
+    public List<RoleDTO> buscar(@RequestParam String rol) {
+        return rR.buscar(rol).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x,RoleDTO.class);
+        }).collect(Collectors.toList());
+    }
+
 
 
 

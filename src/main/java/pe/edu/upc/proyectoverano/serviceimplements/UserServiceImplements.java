@@ -31,4 +31,25 @@ public class UserServiceImplements implements IUserService {
     public Usuario listarId(Long idUsuario) {
         return uR.findById(idUsuario).orElse(new Usuario());
     }
+
+    @Override
+    public void updateUser(Usuario user) {
+        uR.save(user);
+    }
+
+    @Override
+    public List<Usuario> searchUser(String email) {
+        return uR.buscarPorEmail(email);
+    }
+
+    @Override
+    public List<Usuario> searchByMail(String email) {
+        return uR.buscarPorEmail2(email);
+    }
+
+    @Override
+    public void insertarUsuarioConRol(String email, String password, String username) {
+        uR.insertarUsuarioConRol(email,password,username);
+    }
+
 }

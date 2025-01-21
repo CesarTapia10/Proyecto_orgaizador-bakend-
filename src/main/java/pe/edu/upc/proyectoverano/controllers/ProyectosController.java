@@ -3,7 +3,9 @@ package pe.edu.upc.proyectoverano.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -49,5 +51,9 @@ public class ProyectosController {
         ModelMapper m = new ModelMapper();
         Proyectos p = m.map(dto, Proyectos.class);
         cs.update(p);
+    }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {
+        cs.delete(id);
     }
 }

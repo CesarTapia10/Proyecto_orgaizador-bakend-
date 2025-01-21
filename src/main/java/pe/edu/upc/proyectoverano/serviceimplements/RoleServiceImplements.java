@@ -19,6 +19,11 @@ public class RoleServiceImplements implements IRoleService {
     }
 
     @Override
+    public void update(roles rol) {
+        rR.save(rol);
+    }
+
+    @Override
     public List<roles> list() {
         return rR.findAll();
     }
@@ -31,5 +36,10 @@ public class RoleServiceImplements implements IRoleService {
     @Override
     public roles listarId(Long idRol) {
         return rR.findById(idRol).orElse(new roles());
+    }
+
+    @Override
+    public List<roles> buscar(String rol) {
+        return rR.buscarRol(rol);
     }
 }

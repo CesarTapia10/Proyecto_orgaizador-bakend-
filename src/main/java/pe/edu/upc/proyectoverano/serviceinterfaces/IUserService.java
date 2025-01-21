@@ -12,4 +12,12 @@ public interface IUserService {
     public void delete(Long idUsuario);
 
     public Usuario listarId(Long idUsuario);
+
+    public void updateUser(Usuario user);
+
+    public List<Usuario> searchUser(String email);
+
+    public  List<Usuario> searchByMail(String email);
+
+    void insertarUsuarioConRol(String email, String password, String username);
 }
