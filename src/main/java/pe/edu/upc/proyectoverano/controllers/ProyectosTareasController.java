@@ -42,7 +42,7 @@ public class ProyectosTareasController {
     }
 
     @GetMapping("/{id}")
-    public ProyectosTareasDTO listarId(Integer id){
+    public ProyectosTareasDTO listarId(@PathVariable("id") Integer id){
         ModelMapper m = new ModelMapper();
         ProyectosTareasDTO dto=m.map(ptR.listId(id),ProyectosTareasDTO.class);
         return dto;

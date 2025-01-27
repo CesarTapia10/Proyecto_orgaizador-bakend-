@@ -40,7 +40,7 @@ public class ColaboradoresController {
     }
 
     @GetMapping("/{id}")
-    public ColaboradoresDTO listarId(Integer id){
+    public ColaboradoresDTO listarId(@PathVariable("id") Integer id){
         ModelMapper m = new ModelMapper();
         ColaboradoresDTO dto=m.map(cS.listId(id),ColaboradoresDTO.class);
         return dto;

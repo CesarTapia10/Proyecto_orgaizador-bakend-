@@ -41,7 +41,7 @@ public class ComentariosController {
     }
 
     @GetMapping("/{id}")
-    public ComentariosDTO listarId(Integer id){
+    public ComentariosDTO listarId(@PathVariable("id") Integer id){
         ModelMapper m = new ModelMapper();
         ComentariosDTO dto=m.map(cs.listId(id),ComentariosDTO.class);
         return dto;
