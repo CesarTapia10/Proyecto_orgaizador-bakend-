@@ -96,6 +96,29 @@ public class UserController {
         }).collect(Collectors.toList());
     }
 
+    @PostMapping("/create")
+    public ResponseEntity<String> createUser(@RequestBody UserDTO dto) {
+        ModelMapper mapper = new ModelMapper();
+        Usuario user = mapper.map(dto, Usuario.class);
+
+        // Codificar la contraseña
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+
+        // Llamar al procedimiento almacenado a través del repositorio
+        uS.insertarUsuarioConRol(user.getEmail(), encodedPassword, user.getUsername());
+
+        return ResponseEntity.ok("Usuario creado con rol correctamente");
+    }
+
+    @GetMapping("/role/{roleName}")
+    public List<UserDTO> listByRole(@PathVariable("roleName") String roleName) {
+        return uS.listByRole(roleName).stream().map(y -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(y, UserDTO.class);
+        }).collect(Collectors.toList());
+    }
+
+
 
 
 }

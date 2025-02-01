@@ -21,11 +21,8 @@ public interface IUserRepository  extends JpaRepository<Usuario, Long> {
     public int buscarUsername(@Param("username") String nombre);
 
 
-    //INSERTAR ROLES
-    @Transactional
-    @Modifying
-    @Query(value = "insert into roles (rol, user_id) VALUES (:rol, :user_id)", nativeQuery = true)
-    public void insRol(@Param("rol") String authority, @Param("user_id") Long user_id);
+    @Query("SELECT u FROM Usuario u JOIN u.roles r WHERE r.rol = :roleName")
+    List<Usuario> findByRoleName(@Param("roleName") String roleName);
 
     @Query("SELECT d FROM Usuario d WHERE d.email LIKE %:email%")
     public List<Usuario> buscarPorEmail(@Param("email") String email);
@@ -35,7 +32,7 @@ public interface IUserRepository  extends JpaRepository<Usuario, Long> {
     public List<Usuario> buscarPorEmail2(@Param("email") String email);
 
     @Modifying
-    @jakarta.transaction.Transactional
+    @Transactional
     @Query(value = "CALL insertar_usuario_con_rol(:email, :password, :username)", nativeQuery = true)
     void insertarUsuarioConRol(@Param("email") String email,
                                @Param("password") String password,

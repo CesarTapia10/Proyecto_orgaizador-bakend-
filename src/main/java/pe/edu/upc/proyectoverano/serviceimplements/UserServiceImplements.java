@@ -51,5 +51,10 @@ public class UserServiceImplements implements IUserService {
     public void insertarUsuarioConRol(String email, String password, String username) {
         uR.insertarUsuarioConRol(email,password,username);
     }
+    @Override
+    public List<Usuario> listByRole(String roleName) {
+        return uR.findByRoleName(roleName);
+    }
+
 
 }
