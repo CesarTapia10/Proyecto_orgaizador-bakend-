@@ -6,6 +6,7 @@ public class UsersNoPassDTO {
     private Long id;
     private String username;
     private String email;
+    private String pais;
     private LocalDate fecha_registro;
     private LocalDate fecha_modificacion;
 
@@ -48,5 +49,13 @@ public class UsersNoPassDTO {
 
     public void setFecha_modificacion(LocalDate fecha_modificacion) {
         this.fecha_modificacion = fecha_modificacion;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 }

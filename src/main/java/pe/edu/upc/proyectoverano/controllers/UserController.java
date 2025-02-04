@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/usuarios")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200/signUp")
 public class UserController {
     @Autowired
     private IUserService uS;
@@ -89,10 +89,10 @@ public class UserController {
     }
 
     @GetMapping("/NoAuth/{email}")
-    public List<UserDTO> buscarUsuarioNoAuth(@PathVariable String email){
+    public List<UsersNoPassDTO> buscarUsuarioNoAuth(@PathVariable String email){
         return uS.searchUser(email).stream().map(x->{
             ModelMapper m=new ModelMapper();
-            return m.map(x, UserDTO.class);
+            return m.map(x, UsersNoPassDTO.class);
         }).collect(Collectors.toList());
     }
 
