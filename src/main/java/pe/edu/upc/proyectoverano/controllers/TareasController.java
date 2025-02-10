@@ -11,10 +11,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pe.edu.upc.proyectoverano.dtos.TareaTotalRelizadaDTO;
 import pe.edu.upc.proyectoverano.dtos.TareasDTO;
 import pe.edu.upc.proyectoverano.entities.Tareas;
 import pe.edu.upc.proyectoverano.serviceinterfaces.ITareaService;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -56,5 +59,18 @@ public class TareasController {
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id) {
         Ts.delete(id);
+    }
+    @GetMapping("/tareasconrealizacion")
+    public List<TareaTotalRelizadaDTO> galeriareciente(){
+        List<String[]> lista=Ts.verlastareasrealizadasynoralizadas();
+        List<TareaTotalRelizadaDTO>listaDTO=new ArrayList<>();
+        for(String[] columna:lista){
+            TareaTotalRelizadaDTO dto=new TareaTotalRelizadaDTO();
+            dto.setEstado(columna[0]);
+            dto.setCantidad(Integer.parseInt(columna[1]));
+
+            listaDTO.add(dto);
+        }
+        return listaDTO;
     }
 }

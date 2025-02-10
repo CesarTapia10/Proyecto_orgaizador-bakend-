@@ -10,4 +10,5 @@ public interface ITareaService {
     public void delete(int idtareas);
     public Tareas listId(int idtareas);
     public void update(Tareas tareas);
+    public List<String[]> verlastareasrealizadasynoralizadas();
 }

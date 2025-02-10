@@ -10,4 +10,5 @@ public interface IComentariosService {
     public void delete(int idcomentarios);
     public comentarios listId(int idcomentarios);
     public void update(comentarios comentarios);
+    public List<String[]> cantidaddecomentariosporusuario();
 }

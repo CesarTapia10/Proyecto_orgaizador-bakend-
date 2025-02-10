@@ -2,6 +2,7 @@ package pe.edu.upc.proyectoverano.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,7 +26,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/usuarios")
-@CrossOrigin(origins = "http://localhost:4200/signUp")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
     @Autowired
     private IUserService uS;
@@ -43,12 +44,14 @@ public class UserController {
     }
 
     @PostMapping
-    public void registrar(@RequestBody UserDTO dto) {
+    public ResponseEntity<UserDTO> registrar(@RequestBody UserDTO dto) {
         ModelMapper m = new ModelMapper();
-        Usuario u = m.map(dto, Usuario.class);
-        String encodedPassword = passwordEncoder.encode(u.getPassword());
-        u.setPassword(encodedPassword);
-        uS.insert(u);
+        Usuario us = m.map(dto, Usuario.class);
+        String encodedPassword = passwordEncoder.encode(us.getPassword());
+        us.setPassword(encodedPassword);
+        Usuario newUser = uS.insert(us);
+        UserDTO userResponse = m.map(newUser, UserDTO.class);
+        return new ResponseEntity<>(userResponse, HttpStatus.CREATED);
     }
     @PutMapping
     public void modificar(@RequestBody UserDTO dto) {
@@ -117,7 +120,12 @@ public class UserController {
             return m.map(y, UserDTO.class);
         }).collect(Collectors.toList());
     }
-
+    @GetMapping("/nombreusuario")
+    public UserDTO encontraruser(@RequestParam String nombreuser){
+        ModelMapper m = new ModelMapper();
+        UserDTO dto = m.map(uS.finduser(nombreuser), UserDTO.class);
+        return dto;
+    }
 
 
 

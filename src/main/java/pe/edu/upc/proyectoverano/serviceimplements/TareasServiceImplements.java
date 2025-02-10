@@ -37,4 +37,9 @@ public class TareasServiceImplements implements ITareaService {
     public void update(Tareas tareas) {
         tR.save(tareas);
     }
+
+    @Override
+    public List<String[]> verlastareasrealizadasynoralizadas() {
+        return tR.verlastareasrealizadasynoralizadas();
+    }
 }

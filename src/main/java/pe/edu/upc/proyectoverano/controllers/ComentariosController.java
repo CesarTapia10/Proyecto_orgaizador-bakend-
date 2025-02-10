@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pe.edu.upc.proyectoverano.dtos.CantidadDeComentariosPorUsuarioDTO;
 import pe.edu.upc.proyectoverano.dtos.ComentariosDTO;
+import pe.edu.upc.proyectoverano.dtos.TareaTotalRelizadaDTO;
 import pe.edu.upc.proyectoverano.serviceinterfaces.IComentariosService;
 
 
 import pe.edu.upc.proyectoverano.entities.comentarios;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -56,5 +60,18 @@ public class ComentariosController {
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id) {
         cs.delete(id);
+    }
+
+    @GetMapping("/CantidadDeComentarios")
+    public List<CantidadDeComentariosPorUsuarioDTO> galeriareciente(){
+        List<String[]> lista=cs.cantidaddecomentariosporusuario();
+        List<CantidadDeComentariosPorUsuarioDTO>listaDTO=new ArrayList<>();
+        for(String[] columna:lista){
+            CantidadDeComentariosPorUsuarioDTO dto=new CantidadDeComentariosPorUsuarioDTO();
+            dto.setUsername(columna[0]);
+            dto.setCantidad_comentarios(Integer.parseInt(columna[1]));
+            listaDTO.add(dto);
+        }
+        return listaDTO;
     }
 }

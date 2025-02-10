@@ -37,4 +37,9 @@ public class ComentariosServiceImplements implements IComentariosService {
     public void update(comentarios comentarios) {
         cR.save(comentarios);
     }
+
+    @Override
+    public List<String[]> cantidaddecomentariosporusuario() {
+        return cR.cantidaddecomentariosporusuario();
+    }
 }

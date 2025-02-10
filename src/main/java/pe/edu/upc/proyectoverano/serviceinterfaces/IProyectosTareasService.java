@@ -10,4 +10,5 @@ public interface IProyectosTareasService {
     public void delete(int idMproyectosconTareas);
     public ProyectosconTareas listId(int idproyectosconTareas);
     public void update(ProyectosconTareas proyectosconTareas);
+    public List<String[]> cantidaddetareasporusuarioconproyecto();
 }

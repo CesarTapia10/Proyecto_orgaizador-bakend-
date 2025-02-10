@@ -12,9 +12,11 @@ import java.util.List;
 public class UserServiceImplements implements IUserService {
     @Autowired
     private IUserRepository uR;
+
+
     @Override
-    public void insert(Usuario usuario) {
-        uR.save(usuario);
+    public Usuario insert(Usuario usuario) {
+        return uR.save(usuario);
     }
 
     @Override
@@ -54,6 +56,11 @@ public class UserServiceImplements implements IUserService {
     @Override
     public List<Usuario> listByRole(String roleName) {
         return uR.findByRoleName(roleName);
+    }
+
+    @Override
+    public Usuario finduser(String username) {
+        return uR.findByUsername(username);
     }
 
 

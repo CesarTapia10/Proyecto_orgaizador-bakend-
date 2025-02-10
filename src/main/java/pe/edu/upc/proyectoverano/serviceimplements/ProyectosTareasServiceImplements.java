@@ -38,4 +38,9 @@ public class ProyectosTareasServiceImplements implements IProyectosTareasService
     public void update(ProyectosconTareas proyectosconTareas) {
         ptR.save(proyectosconTareas);
     }
+
+    @Override
+    public List<String[]> cantidaddetareasporusuarioconproyecto() {
+        return ptR.cantidaddetareasporusuarioconproyecto();
+    }
 }

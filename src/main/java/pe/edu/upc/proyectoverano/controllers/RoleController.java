@@ -2,6 +2,7 @@ package pe.edu.upc.proyectoverano.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/roles")
+@CrossOrigin(origins = "http://localhost:4200")
 public class RoleController {
     @Autowired
     private IRoleService rR;
@@ -38,13 +40,14 @@ public class RoleController {
         ModelMapper m = new ModelMapper();
         roles d = m.map(dto, roles.class);
         rR.insert(d);
-    }
+  }
 
     @PostMapping
     public void registrar(@RequestBody RoleDTO dto) {
         ModelMapper m = new ModelMapper();
         roles r = m.map(dto, roles.class);
         rR.insert(r);
+
     }
 
     @DeleteMapping("/{id}")

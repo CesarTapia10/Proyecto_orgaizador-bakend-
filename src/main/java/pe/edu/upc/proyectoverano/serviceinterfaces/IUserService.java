@@ -5,7 +5,7 @@ import pe.edu.upc.proyectoverano.entities.Usuario;
 import java.util.List;
 
 public interface IUserService {
-    public void insert(Usuario usuario);
+    Usuario insert(Usuario usuario);
 
     public List<Usuario> list();
 
@@ -22,4 +22,6 @@ public interface IUserService {
     void insertarUsuarioConRol(String email, String password,
                                String username);
     public List<Usuario> listByRole(String roleName);
+
+    public Usuario finduser(String username);
 }

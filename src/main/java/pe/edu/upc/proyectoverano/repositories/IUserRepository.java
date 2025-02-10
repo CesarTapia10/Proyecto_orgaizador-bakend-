@@ -25,11 +25,18 @@ public interface IUserRepository  extends JpaRepository<Usuario, Long> {
     List<Usuario> findByRoleName(@Param("roleName") String roleName);
 
     @Query("SELECT d FROM Usuario d WHERE d.email LIKE %:email%")
+    public List<Usuario> buscarPorEmail2(@Param("email") String email);
+
+
+    @Query(value= "SELECT *\n" +
+            "FROM public.usuario\n" +
+            " WHERE email LIKE %:email%",nativeQuery = true)
     public List<Usuario> buscarPorEmail(@Param("email") String email);
 
 
-    @Query("SELECT d FROM Usuario d WHERE d.email =:email")
-    public List<Usuario> buscarPorEmail2(@Param("email") String email);
+
+
+
 
     @Modifying
     @Transactional
