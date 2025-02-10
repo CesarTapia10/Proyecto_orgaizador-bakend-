@@ -57,7 +57,7 @@ public class CORS implements Filter {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:4200")
-                        .allowedOrigins("https://ab13-caf7e.web.app") //usando localmente
+                        .allowedOrigins("https://ego-task-backend.onrender.com") //usando localmente
                         // Ajusta el origen permitido
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
