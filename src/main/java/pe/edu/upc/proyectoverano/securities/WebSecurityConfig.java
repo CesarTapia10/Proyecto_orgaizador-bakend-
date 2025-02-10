@@ -68,7 +68,7 @@ public class WebSecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/usuarios/NoAuth/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/roles/**").permitAll()
                         //si quieres ver el apartado en el swagger y no en el posrtamn
-                        //.requestMatchers(AUTH_WHITELIST).permitAll()
+                        .requestMatchers(AUTH_WHITELIST).permitAll()
                         .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())
