@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/roles")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"https://ego-task-backend.onrender.com", "http://localhost:4200"}, allowedHeaders = "*", allowCredentials = "true")
 public class RoleController {
     @Autowired
     private IRoleService rR;
