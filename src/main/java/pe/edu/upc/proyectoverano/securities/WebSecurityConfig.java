@@ -65,8 +65,7 @@ public class WebSecurityConfig {
                         .requestMatchers(antMatcher ("/usuarios")).permitAll()
                         .requestMatchers(antMatcher ("/roles")).permitAll()
                         .requestMatchers(antMatcher ("/roles/**")).permitAll()// Permitir registro
-                        .requestMatchers(HttpMethod.GET, "/usuarios/NoAuth/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/roles/**").permitAll()
+
                         //si quieres ver el apartado en el swagger y no en el posrtamn
                         //.requestMatchers(AUTH_WHITELIST).permitAll()
                         .anyRequest().authenticated()
