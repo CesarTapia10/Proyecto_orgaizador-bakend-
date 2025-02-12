@@ -61,11 +61,10 @@ public class WebSecurityConfig {
         httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(req -> req
-                        .requestMatchers("/**").permitAll()
-                        //  .requestMatchers(antMatcher("/login")).permitAll()
-                       // .requestMatchers(antMatcher ("/usuarios")).permitAll()
-                        //.requestMatchers(antMatcher ("/roles")).permitAll()
-                        //.requestMatchers(antMatcher ("/roles/**")).permitAll()// Permitir registro
+                        .requestMatchers(antMatcher("/login")).permitAll()
+                        .requestMatchers(antMatcher ("/usuarios")).permitAll()
+                        .requestMatchers(antMatcher ("/roles")).permitAll()
+                        .requestMatchers(antMatcher ("/roles/**")).permitAll()// Permitir registro
 
                         //si quieres ver el apartado en el swagger y no en el posrtamn
                         //.requestMatchers(AUTH_WHITELIST).permitAll()
