@@ -19,6 +19,7 @@ pe\edu\upc\proyectoverano\securities\JwtTokenUtil.class
 pe\edu\upc\proyectoverano\securities\WebSecurityConfig.class
 pe\edu\upc\proyectoverano\controllers\ProyectosController.class
 pe\edu\upc\proyectoverano\repositories\IColaboradoresRepository.class
+pe\edu\upc\proyectoverano\dtos\CantidadDeComentariosPorUsuarioDTO.class
 pe\edu\upc\proyectoverano\serviceinterfaces\IColaboradoresService.class
 pe\edu\upc\proyectoverano\securities\JwtRequestFilter.class
 pe\edu\upc\proyectoverano\serviceinterfaces\IRoleService.class
@@ -38,6 +39,7 @@ pe\edu\upc\proyectoverano\entities\Proyectos.class
 pe\edu\upc\proyectoverano\util\CORS.class
 pe\edu\upc\proyectoverano\repositories\IProyectosTareasRepository.class
 pe\edu\upc\proyectoverano\entities\roles.class
+pe\edu\upc\proyectoverano\dtos\CantidaDeUsuarioConTareasyProyectosDTO.class
 pe\edu\upc\proyectoverano\dtos\RoleDTO.class
 pe\edu\upc\proyectoverano\securities\JwtAuthenticationEntryPoint.class
 pe\edu\upc\proyectoverano\serviceimplements\RoleServiceImplements.class
@@ -47,6 +49,7 @@ pe\edu\upc\proyectoverano\dtos\ProyectosTareasDTO.class
 pe\edu\upc\proyectoverano\serviceimplements\ColaboradoresServiceImplements.class
 pe\edu\upc\proyectoverano\dtos\ProyectosDTO.class
 pe\edu\upc\proyectoverano\repositories\IComentariosRepository.class
+pe\edu\upc\proyectoverano\dtos\TareaTotalRelizadaDTO.class
 pe\edu\upc\proyectoverano\repositories\IRoleRepository.class
 pe\edu\upc\proyectoverano\serviceimplements\ComentariosServiceImplements.class
 pe\edu\upc\proyectoverano\controllers\ProyectosTareasController.class

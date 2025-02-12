@@ -26,6 +26,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/usuarios")
+
 public class UserController {
     @Autowired
     private IUserService uS;

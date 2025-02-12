@@ -6,12 +6,15 @@ D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\s
 D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\controllers\RoleController.java
 D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\controllers\TareasController.java
 D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\controllers\UserController.java
+D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\dtos\CantidadDeComentariosPorUsuarioDTO.java
+D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\dtos\CantidaDeUsuarioConTareasyProyectosDTO.java
 D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\dtos\ColaboradoresDTO.java
 D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\dtos\ComentariosDTO.java
 D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\dtos\ProyectosDTO.java
 D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\dtos\ProyectosTareasDTO.java
 D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\dtos\RoleDTO.java
 D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\dtos\TareasDTO.java
+D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\dtos\TareaTotalRelizadaDTO.java
 D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\dtos\UserDTO.java
 D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\dtos\UsersNoPassDTO.java
 D:\capeta de programar 6to\Proyecto Verano Personal\Proyecto_orgaizador-bakend\src\main\java\pe\edu\upc\proyectoverano\entities\Colaboradores.java
